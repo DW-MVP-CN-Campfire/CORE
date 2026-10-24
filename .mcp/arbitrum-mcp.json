@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "arbitrum-mcp": {
+      "command": "docker",
+      "args": [
+        "run",
+        "-i",
+        "--rm",
+        "dewanshparashar/arbitrum-mcp"
+      ]
+    }
+  }
+}
