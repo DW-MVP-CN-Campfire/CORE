@@ -1,0 +1,24 @@
+name: Repo Health Check
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  health-check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run repository health check
+        run: |
+          chmod +x ./repo-health-check.sh
+          ./repo-health-check.sh
